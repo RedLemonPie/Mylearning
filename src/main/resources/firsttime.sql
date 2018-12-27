@@ -22,13 +22,14 @@ CREATE TABLE `user` (
   `password` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `score` int(11) NOT NULL,
+  `auth`int(11) not null ,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('1', 'ja', '123', 'ja@1.com','0');
-INSERT INTO `user` VALUES ('2', 'BL', '123', 'bl@1.com','0');
-INSERT INTO `user` VALUES ('3', 'QZY', '123', 'bl2@1.com','0');
-INSERT INTO `user` VALUES ('4', 'YJH', '123', 'bl3@1.com','0');
+INSERT INTO `user` VALUES ('1', 'ja', '123', 'ja@1.com','0','1');
+INSERT INTO `user` VALUES ('2', 'BL', '123', 'bl@1.com','0','2');
+INSERT INTO `user` VALUES ('3', 'QZY', '123', 'bl2@1.com','0','1');
+INSERT INTO `user` VALUES ('4', 'YJH', '123', 'bl3@1.com','0','1');
