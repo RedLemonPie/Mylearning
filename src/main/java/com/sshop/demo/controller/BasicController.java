@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.sshop.demo.model.bean.User;
+import com.sshop.demo.model.bean.UserDTO;
 import com.sshop.demo.model.dao.UserDAO;
 
 @RestController
@@ -20,8 +21,14 @@ public class BasicController {
         return "login"; // 此处表示返回值是一个值为“login”的String。不指向界面的原因是类的注解是@RestController
     }
 
+    @GetMapping(value = "searchScore.do")
+    public Object login(int id) {
+        System.out.println("传入参数：id"+id);
+        UserDTO userDTO = userDAO.findScore(id);
+        return userDTO;
+    }
 
-    @GetMapping(value = "index.do")
+    @GetMapping(value = "login")
     public ModelAndView index2() {
         return new ModelAndView("login"); // 此处指向界面
     }
@@ -35,12 +42,13 @@ public class BasicController {
         } else if (StringUtils.isEmpty(password)) {
             return "password不能为空";
         }
-        User user = userDAO.find(name, password);
+        User user = userDAO.findAll(name, password);
         if (user != null) {
             return user;
         } else {
             return "用户名或密码错误";
         }
     }
+
 
 }

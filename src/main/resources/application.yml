@@ -27,3 +27,16 @@ mybatis:
   mapper-locations: classpath:mapper/*.xml
   configuration:
     map-underscore-to-camel-case: true
+
+#jwt
+# JWT 604800
+jwt:
+  header: Authorization
+  secret: mySecret
+  expiration: 10
+  tokenHead: Bearer
+  route:
+    authentication:
+      path: auth/login
+      refresh: auth/refresh
+      register: 'auth/register'
