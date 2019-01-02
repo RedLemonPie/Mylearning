@@ -3,12 +3,16 @@ package com.sshop.demo.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.sshop.demo.model.bean.User;
 import com.sshop.demo.model.bean.UserDTO;
 import com.sshop.demo.model.dao.UserDAO;
+
+import javax.servlet.http.HttpServletRequest;
 
 @RestController
 public class BasicController {
@@ -49,6 +53,7 @@ public class BasicController {
             return "用户名或密码错误";
         }
     }
+
 
 
 }

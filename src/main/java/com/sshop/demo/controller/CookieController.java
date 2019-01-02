@@ -20,7 +20,7 @@ public class CookieController {
         Object sessionBrowser = session.getAttribute("browser");
         Map<String, Object> map = new HashMap<String,Object>();
         if (sessionBrowser == null) {
-            System.out.println("不存在session，设置browser=" + browser);
+            System.out.println("不存在session，设置browser=" + browser)   ;
             session.setAttribute("browser", browser);
             map.put("browser", browser);
         } else {

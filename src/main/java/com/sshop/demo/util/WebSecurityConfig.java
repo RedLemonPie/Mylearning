@@ -15,7 +15,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()  //定义哪些url需要保护，哪些url不需要保护
-                    .antMatchers("/", "/login","register").permitAll()    //定义不需要认证就可以访问
+                    .antMatchers("/", "/login","/register","/getSessionId","/test").permitAll()    //定义不需要认证就可以访问
                     .anyRequest().authenticated()
                     .and()
                 .formLogin()
